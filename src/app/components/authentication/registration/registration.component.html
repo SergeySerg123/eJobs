@@ -1,0 +1,58 @@
+<div class="bg-account">
+  <div class="backdrop"></div>
+  <div class="form-window">
+    <div class="form-content">
+      <div class="form-header">
+        <span>Зарегистрируйтесь</span>
+        <hr />
+      </div>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="hasSignUpError()" class="alert alert-danger">
+          {{errorMessage}}
+        </div>
+        <div class="form-group">
+          <label>Имя</label>
+          <input type="text" placeholder="Введите имя" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors, 'is-valid': submitted && !f.email.errors }" />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">Поле с именем обязательно</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Фамилия</label>
+          <input type="text" placeholder="Введите фамилию" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors, 'is-valid': submitted && !f.email.errors }" />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Поле с фамилией обязательно</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" placeholder="Введите email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors, 'is-valid': submitted && !f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Поле Email обязательно</div>
+            <div *ngIf="f.email.errors.email">Email должен быть валидным</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Пароль</label>
+          <input type="password" placeholder="Введите пароль" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors, 'is-valid': submitted && !f.email.errors }" />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Пароль нужен обязательно</div>
+            <div *ngIf="f.password.errors.minlength">Длина пароля должна быть не менее 6 символов</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Подтвердите пароль</label>
+          <input type="password" placeholder="Подтвердите пароль" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors, 'is-valid': submitted && !f.email.errors }" />
+          <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+            <div *ngIf="f.confirmPassword.errors.required">Подтвердение пароля обязательно</div>
+            <div *ngIf="f.confirmPassword.errors.mustMatch">Пароли должны совпадать</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary">Зарегистрироваться</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
