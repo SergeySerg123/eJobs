@@ -19,7 +19,7 @@ export class AuthServiceClient {
       .subscribe(res => {
         localStorage.setItem('token', res.token);
         this.store.dispatch(new LogInSuccess(res));
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/');      
       },
         err => { this.store.dispatch(new LogInFailure(err)) });
   }

@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './components/home/home.component';
+import { HeaderNavbarComponent } from './components/header-navbar/header-navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundPageComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderNavbarComponent
   ],
   imports: [
     BrowserModule,

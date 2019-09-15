@@ -7,15 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/authentication/registration/registration.component';
 
 const routes: Routes = [
-
   { path: '', pathMatch: 'full', canActivate: [AuthGuard], component: HomeComponent },
-  {
-    path: 'account', children: [
-      { path: '', pathMatch: 'full', redirectTo: '/account/login'  },
-      { path: 'login', component: LoginComponent },
-      { path: 'registration', component: RegistrationComponent }
-    ]
-  },
+  { path: 'login', component: LoginComponent, data: { state: 'login'} },
+  { path: 'registration', component: RegistrationComponent, data: { state: 'registration' } },
   { path: '**', component: NotFoundPageComponent }
 ];
 
