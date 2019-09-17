@@ -18,12 +18,14 @@ export class LoginComponent implements OnInit {
   loading: boolean = false;
   showSpinner: boolean = false;
   showForms: boolean = true;
+  isFirstRequest: boolean = false;
 
   private windowPlayer: AnimationPlayer;
 
   @ViewChild('windowState') windowRef: ElementRef;
 
   constructor(
+    private host: ElementRef<HTMLElement>,
     private authServiceClient: AuthServiceClient,
     private store: Store<AppState>,
     private formBuilder: FormBuilder,
@@ -50,13 +52,20 @@ export class LoginComponent implements OnInit {
   }
 
   //On submit form
-  onSubmit() {
+  async onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
     }
+
+    this.setFullScreen();
+    if (!this.isFirstRequest) {
+      await delay(400);
+      this.isFirstRequest = !this.isFirstRequest;
+    }
+      
 
     const payload = {
       email: this.registerForm.value.email,
@@ -108,5 +117,21 @@ export class LoginComponent implements OnInit {
     }
     this.windowPlayer.play();
     this.showSpinner = !this.showSpinner;
+  }
+
+  private get container(): HTMLElement {
+    return this.host.nativeElement.querySelector(".login-part");
+  }
+
+  private get isFullScreen(): boolean {
+    return this.container.classList.contains("fullScreen");
+  }
+
+  setFullScreen() {
+    if (!this.isFullScreen) {
+      
+      this.container.classList.add("fullScreen");
+      delay(400).then(() => { this.host.nativeElement.querySelector(".form-window").classList.add("to-top");})
+    }    
   }
 }
