@@ -1,0 +1,62 @@
+.dashboard-part {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background-color: #5E81F4;
+
+
+  .first {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  .second {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: rotate(5deg);
+  }
+
+  .ellipce {
+    position: fixed;
+    left: 25%;
+    top: -100px;
+  }
+
+  .center-block-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -35px;
+    font-family: Open sans;
+
+    .center-block {
+      position: relative;
+      z-index: 10;
+      width: 60%;
+      margin-top: 100px;
+      max-width: 300px;
+      height: auto;
+      font-size: 64px;
+      line-height: 81px;
+      color: #fff;
+      font-weight: 600;
+
+      .white-line {
+        margin: 50px 0;
+        width: 150px;
+        height: 8px;
+        background-color: #fff;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+  }
+}

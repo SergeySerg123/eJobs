@@ -10,7 +10,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderNavbarComponent } from './components/header-navbar/header-navbar.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

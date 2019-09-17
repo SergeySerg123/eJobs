@@ -5,12 +5,12 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\authentication",
-    "\\src\\app\\components\\authentication\\login",
-    "\\src\\app\\components\\authentication\\registration",
-    "\\src\\app\\models",
-    "\\src\\app\\services",
-    "\\src\\app\\store"
+    "\\src\\app\\components\\authorization",
+    "\\src\\app\\components\\authorization\\login",
+    "\\src\\app\\components\\authorization\\right-dashboard",
+    "\\src\\app\\components\\UI\\logo",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\components\\authentication\\authentication.module.ts",
+  "SelectedNode": "\\src\\app\\components\\authorization\\right-dashboard\\right-dashboard.component.scss",
   "PreviewInSolutionExplorer": false
 }
