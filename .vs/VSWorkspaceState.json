@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\components",
     "\\src\\app\\components\\authentication",
+    "\\src\\app\\components\\authentication\\login",
+    "\\src\\app\\components\\authentication\\registration",
     "\\src\\app\\components\\authorization",
-    "\\src\\app\\components\\authorization\\login",
-    "\\src\\app\\components\\authorization\\right-dashboard",
-    "\\src\\app\\components\\UI\\logo",
+    "\\src\\app\\components\\authorization\\registration",
+    "\\src\\app\\models",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\components\\authorization\\right-dashboard\\right-dashboard.component.scss",
+  "SelectedNode": "\\src\\app\\services\\auth-client.service.ts",
   "PreviewInSolutionExplorer": false
 }

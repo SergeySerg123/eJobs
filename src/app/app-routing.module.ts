@@ -4,7 +4,7 @@ import { LoginComponent } from './components/authorization/login/login.component
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './components/home/home.component';
-import { RegistrationComponent } from './components/authentication/registration/registration.component';
+import { RegistrationComponent } from './components/authorization/registration/registration.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', canActivate: [AuthGuard], component: HomeComponent },

@@ -1,0 +1,77 @@
+.sidebar {
+  font-family: Proxima Nova;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 270px;
+  height: 100%;
+}
+
+.main-content {
+  font-family: Proxima Nova;
+  font-size: 24px;
+  left: 270px;
+  position: fixed;
+  top: 0;
+  background-color: #F5F5FB;
+  width: 100%;
+  height: 100%;
+
+  hr{
+    margin: 0;
+  }
+
+
+  .header-input-area {
+    width: calc(100% - 270px);
+    padding-left: 2%;
+    padding-right: 2%;
+
+
+    .form-control {
+      margin: 30px;
+      width: 300px;
+    }
+
+    .search {
+      width: 600px;
+    }
+  }
+
+  .jobs-opening-container {
+    padding-top: 20px;
+    width: calc(100% - 270px);
+    height: calc(100% - 98px);
+    overflow-y: auto;
+
+    .header-container {
+      display: flex;
+      flex-flow: row wrap;
+      color: #717171;
+
+      .title {
+        padding-left: 5%;
+        font-weight: 700;
+        color: #131336;
+      }
+
+      .selected {
+        color: #131336;
+        font-weight: 600;
+      }
+
+      .item {
+        cursor: pointer;
+      }
+
+      .sort-params-container {
+
+        font-size: 16px;
+        padding-right: 5%;
+        span{
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+}

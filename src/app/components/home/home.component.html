@@ -1,3 +1,39 @@
-<p>
-  home works!
-</p>
+<div class="sidebar">
+  <app-sidebar></app-sidebar>
+</div>
+<main class="main-content">
+  <div class="header-input-area">
+<!--    to do inputs-->
+    <div class="input-container">
+        <form>
+          <div class="form-row">
+            <div class="col">
+              <select class="form-control">
+                <option>All categories</option>
+              </select>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Search..." style="width: 600px">
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </form>
+    </div>
+    <hr>
+  </div>
+
+  <div class="jobs-opening-container ">
+    <div class="header-container d-flex justify-content-between">
+      <div class="title">
+        <span>Jobs opening</span>
+      </div>
+      <div class="sort-params-container">
+        <span>Sorted by:</span>
+        <span class="selected item">Conformity</span>
+        <span class="item">Newest</span>
+      </div>
+    </div>
+    <app-job-position></app-job-position>
+  </div>
+</main>

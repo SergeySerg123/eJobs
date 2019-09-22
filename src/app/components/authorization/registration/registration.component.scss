@@ -1,0 +1,61 @@
+.login-part {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  color: #252525;
+  z-index: 99999;
+  background-color: #fff;
+
+  .form-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Open sans;
+  }
+
+  .form-content {
+    position: relative;
+    z-index: 10;
+    width: 60%;
+    max-width: 600px;
+    height: auto;
+    margin-top: -70px;
+    background-color: #fff;
+    color: #252525;
+
+    .form-header {
+      font-size: 36px;
+      line-height: 46px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    input {
+      background: #F7F9FA;
+    }
+
+    button {
+      background: #5E81F4;
+      width: 100%;
+      border-radius: 10px 0px 10px 10px;
+    }
+
+    .after-form {
+      font-size: 16px;
+      line-height: 20px;
+      margin-top: 40px;
+    }
+  }
+}
+
+.fullScreen {
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.to-top {
+  margin-top: -240px;
+}

@@ -3,22 +3,13 @@ import { AuthServiceClient } from '../../../services/auth-client.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../store/state/app.states';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { trigger, transition, style, animate, state,  AnimationBuilder, AnimationPlayer } from '@angular/animations';
+import { style, animate, AnimationBuilder, AnimationPlayer } from '@angular/animations';
 import { delay } from 'q';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-
-  animations: [
-    trigger('fade', [
-      state('void', style({ opacity: 0 })),
-      transition('void => *', [
-        animate(300)
-      ])
-    ])
-  ]
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   registerForm: FormGroup;

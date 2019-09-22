@@ -10,7 +10,7 @@ export interface IState {
 }
 
 export const initialState: IState = {
-    isAuthenticated: false,
+    isAuthenticated: true,
     user: null,
     errorMessage: null,
     loading: false
@@ -34,8 +34,8 @@ export function reducer(state = initialState, action: AuthTypes): IState {
         user: {
           token: action.payload.token,
           email: action.payload.email,
-          firstName: action.payload.firstName,
-          lastName: action.payload.lastName
+          name: action.payload.name,
+          role: action.payload.role
         },
         errorMessage: null
       };
