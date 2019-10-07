@@ -1,0 +1,48 @@
+$color: #5E81F4;
+$background-item: linear-gradient(269.84deg, rgba(217, 215, 215, 0.19) 0.03%, rgba(255, 255, 255, 0) 147.73%);
+
+.menu {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    width: 100%;
+    padding: 20px 30px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  li:hover {
+    background: $background-item;
+  }
+
+  li.active {
+    background: $background-item;
+  }
+
+  li.active::after {
+    content: '';
+    height: 100%;
+    width: 5px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: $color;
+    border-radius: 2.5px;
+  }
+
+  span {
+    margin-left: 20px;
+  }
+}
+
+.active-item {
+  color: $color;
+}

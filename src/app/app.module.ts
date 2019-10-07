@@ -7,6 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 import {HomeModule} from "./components/home/home.module";
 import { AppComponent } from './app.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 
 
@@ -20,6 +21,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
     AppRoutingModule,
     AuthorizationModule,
     StoreSettingsModule,
+    FontAwesomeModule,
     HomeModule
   ],
   providers: [AuthGuard],

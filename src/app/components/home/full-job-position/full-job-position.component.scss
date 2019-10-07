@@ -1,5 +1,15 @@
-.main-container {
- }
+.title {
+  width: 90%;
+  margin: 5px auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+button {
+  background: #5E81F4;
+  width: 360px;
+  border-radius: 10px 0px 10px 10px;
+}
 
 .job-container {
   background: #FFFFFF;
@@ -17,7 +27,14 @@
     color: #5E81F4;
   }
 
-  .matches{
+  .title{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #A2A2C3;
+  }
+
+  .desc {
     font-size: 16px;
     line-height: 19px;
     font-weight: 700;
@@ -44,7 +61,7 @@
   }
 }
 
-.job-container-hover:hover{
+.job-container:hover{
   cursor: pointer;
   opacity: 0.8;
   transition: all 0.2s;

@@ -17,7 +17,7 @@ export const initialState: IState = {
 };
 
 
-export function reducer(state = initialState, action: AuthTypes): IState {
+export function authReducers(state = initialState, action: AuthTypes): IState {
   switch (action.type) {
     case AuthActionTypes.LOGIN: {
       return {

@@ -19,13 +19,13 @@ export class AuthServiceClient {
       .subscribe(res => {
         localStorage.setItem('token', res.token);
         this.store.dispatch(new LogInSuccess(res));
-        this.router.navigateByUrl('/');      
+        this.router.navigateByUrl('/');
       },
         err => { this.store.dispatch(new LogInFailure(err)) });
   }
 
   SignUp(payload): void {
-    this.store.dispatch(new SignUp())
+    this.store.dispatch(new SignUp());
     this.authService.signUp(payload.email, payload.name, payload.password)
       .subscribe(res => {
         this.store.dispatch(new SignUpSuccess(res));
@@ -37,4 +37,10 @@ export class AuthServiceClient {
   LogOut(): void {
     this.authService.logOut();
   }
+
+  get token(): string {
+    return this.authService.getToken();
+  }
+
+
 }

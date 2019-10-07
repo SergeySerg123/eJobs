@@ -1,0 +1,29 @@
+.header-container {
+  display: flex;
+  flex-flow: row wrap;
+  color: #717171;
+
+  .title {
+    padding-left: 5%;
+    font-weight: 700;
+    color: #131336;
+  }
+
+  .selected {
+    color: #131336;
+    font-weight: 600;
+  }
+
+  .item {
+    cursor: pointer;
+  }
+
+  .sort-params-container {
+
+    font-size: 16px;
+    padding-right: 5%;
+    span{
+      padding-right: 20px;
+    }
+  }
+}

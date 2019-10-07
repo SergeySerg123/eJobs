@@ -1,0 +1,12 @@
+<div class="header-container d-flex justify-content-between">
+  <div class="title">
+    <span>Jobs opening</span>
+  </div>
+  <div class="sort-params-container">
+    <span>Sorted by:</span>
+    <span class="selected item">Conformity</span>
+    <span class="item">Newest</span>
+  </div>
+</div>
+
+<app-job-position [list]="jobsList" [loading]="loading"></app-job-position>

@@ -1,104 +1,18 @@
 <div class="main-container">
-  <div class="job-container">
+  <app-spinner *ngIf="loading"></app-spinner>
+  <div class="job-container" (click)="showFullInfo(job.id)" *ngFor="let job of list" [class.job-container-hover]="!hasCloseBtn">
     <div class="d-flex justify-content-between">
-      <div class="job-title">JAVA DEVELOPER</div>
+      <div class="job-title">{{job.position}}</div>
       <div class="matches">14 of 16 competences matched</div>
     </div>
-    <div class="salary">Full time, <b>5 000$</b> per months</div>
+    <div class="salary">{{job.type}}, <b>{{job.salary}}$</b> per months</div>
     <div class="job-description text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.
+      {{job.description}}
     </div>
-    </div>
-
-  <div class="job-container">
-    <div class="d-flex justify-content-between">
-      <div class="job-title">JAVA DEVELOPER</div>
-      <div class="matches">14 of 16 competences matched</div>
-    </div>
-    <div class="salary">Full time, <b>5 000$</b> per months</div>
-    <div class="job-description text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.
+    <div class="d-flex justify-content-end mt-2" *ngIf="hasCloseBtn">
+      <button class="btn btn-primary mr-2" (click)="applySuggest(job.id)">Apply</button>
+      <button class="btn btn-danger" (click)="deleteSuggest(job.id)">Delete</button>
     </div>
   </div>
-
-  <div class="job-container">
-    <div class="d-flex justify-content-between">
-      <div class="job-title">JAVA DEVELOPER</div>
-      <div class="matches">14 of 16 competences matched</div>
-    </div>
-    <div class="salary">Full time, <b>5 000$</b> per months</div>
-    <div class="job-description text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.
-    </div>
-  </div>
-
-  <div class="job-container">
-    <div class="d-flex justify-content-between">
-      <div class="job-title">JAVA DEVELOPER</div>
-      <div class="matches">14 of 16 competences matched</div>
-    </div>
-    <div class="salary">Full time, <b>5 000$</b> per months</div>
-    <div class="job-description text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.
-    </div>
-  </div>
-
-  <div class="job-container">
-    <div class="d-flex justify-content-between">
-      <div class="job-title">JAVA DEVELOPER</div>
-      <div class="matches">14 of 16 competences matched</div>
-    </div>
-    <div class="salary">Full time, <b>5 000$</b> per months</div>
-    <div class="job-description text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.
-    </div>
-  </div>
-
-  <div class="job-container">
-    <div class="d-flex justify-content-between">
-      <div class="job-title">JAVA DEVELOPER</div>
-      <div class="matches">14 of 16 competences matched</div>
-    </div>
-    <div class="salary">Full time, <b>5 000$</b> per months</div>
-    <div class="job-description text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.
-    </div>
-  </div>
-
-
-  <div class="job-container">
-    <div class="d-flex justify-content-between">
-      <div class="job-title">JAVA DEVELOPER</div>
-      <div class="matches">14 of 16 competences matched</div>
-    </div>
-    <div class="salary">Full time, <b>5 000$</b> per months</div>
-    <div class="job-description text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.
-    </div>
-  </div>
-
-  <div class="job-container">
-    <div class="d-flex justify-content-between">
-      <div class="job-title">JAVA DEVELOPER</div>
-      <div class="matches">14 of 16 competences matched</div>
-    </div>
-    <div class="salary">Full time, <b>5 000$</b> per months</div>
-    <div class="job-description text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.
-    </div>
-  </div>
-
-
-  <div class="job-container">
-    <div class="d-flex justify-content-between">
-      <div class="job-title">JAVA DEVELOPER</div>
-      <div class="matches">14 of 16 competences matched</div>
-    </div>
-    <div class="salary">Full time, <b>5 000$</b> per months</div>
-    <div class="job-description text-justify">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.
-    </div>
-  </div>
-
 </div>
 

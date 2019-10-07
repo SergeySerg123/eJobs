@@ -1,0 +1,27 @@
+.sort-area {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+
+  li{
+    cursor: pointer;
+  }
+
+  li:hover {
+    opacity: 0.8;
+  }
+
+  li.active {
+    position: relative;
+  }
+
+  li.active:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: #5E81F4;
+    height: 4px;
+    top: 100%;
+    left: 0;
+  }
+}

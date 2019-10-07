@@ -5,9 +5,19 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/authorization/registration/registration.component';
+import {VacanciesComponent} from "./components/home/vacancies/vacancies.component";
+import {JobOppeningsComponent} from "./components/home/job-oppenings/job-oppenings.component";
+import {FullJobPositionComponent} from "./components/home/full-job-position/full-job-position.component";
+
+const homeRoutes: Routes = [
+  { path: 'vacancies', component: VacanciesComponent},
+  { path: 'jobs/:id', component: FullJobPositionComponent },
+  { path: '', component: JobOppeningsComponent }
+];
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', canActivate: [AuthGuard], component: HomeComponent },
+  { path: '', canActivate: [AuthGuard], component: HomeComponent,
+  children: homeRoutes },
   { path: 'login', component: LoginComponent, data: { state: 'login'} },
   { path: 'registration', component: RegistrationComponent, data: { state: 'registration' } },
   { path: '**', component: NotFoundPageComponent }
