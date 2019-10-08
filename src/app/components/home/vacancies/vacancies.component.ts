@@ -11,6 +11,7 @@ import {JobsClientService} from "../../../services/jobs-client.service";
 })
 export class VacanciesComponent implements OnInit {
   vacancies: Job[] = [];
+  loading: boolean = false;
   testUserId = "1";
 
   constructor(
@@ -19,8 +20,9 @@ export class VacanciesComponent implements OnInit {
   ) {
     this.store.subscribe(state => {
       let jobsList = state.jobsList.jobsList;
+      this.vacancies = [];
+      this.loading = state.jobsList.loading;
       if (jobsList !== null) {
-        console.log(jobsList);
         jobsList.forEach(job => {
           job.suggestedToUserId.forEach(userId => {
             if (userId === this.testUserId) {

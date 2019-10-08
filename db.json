@@ -1,66 +1,120 @@
-﻿{
-  "jobs" : [
+{
+  "jobs": [
     {
-      "id" : "1",
-      "position" : "Senior Java developer",
-      "city":"Odessa",
+      "id": "1",
+      "position": "Senior Java developer",
+      "city": "Odessa",
       "country": "Ukraine",
       "salary": 4500,
-      "stack": ["Java", "Maven", "Beans"],
+      "stack": [
+        "Java",
+        "Maven",
+        "Beans"
+      ],
       "type": "Full time",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.",
-      "companyId" : "2",
-      "suggestedToUserId": ["1", "2", "4"],
-      "appliedUserId" : ["1", "2"],
-      "interviewUserId" : ["2"]
+      "companyId": "2",
+      "suggestedToUserId": [
+        "2",
+        "4"
+      ],
+      "appliedUserId": [
+        "1",
+        "2"
+      ],
+      "interviewUserId": [
+        "2"
+      ]
     },
     {
-      "id" : "2",
-      "position" : ".NET developer",
-      "city":"Kiev",
+      "id": "2",
+      "position": ".NET developer",
+      "city": "Kiev",
       "country": "Ukraine",
       "salary": 3200,
-      "stack": ["C#", ".Net", "ASP.NET"],
+      "stack": [
+        "C#",
+        ".Net",
+        "ASP.NET"
+      ],
       "type": "Full time",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.",
-      "companyId" : "2",
-      "suggestedToUserId": ["1", "2", "4"],
-      "appliedUserId" : ["1", "2"],
-      "interviewUserId" : ["2"]
+      "companyId": "2",
+      "suggestedToUserId": [
+        "2",
+        "4"
+      ],
+      "appliedUserId": [
+        "1",
+        "2"
+      ],
+      "interviewUserId": [
+        "2"
+      ]
     },
     {
-      "id" : "3",
-      "position" : "Junior Java developer",
-      "city":"Kharkov",
+      "id": "3",
+      "position": "Junior Java developer",
+      "city": "Kharkov",
       "country": "Ukraine",
       "salary": 450,
-      "stack": ["Java", "Maven", "Beans"],
+      "stack": [
+        "Java",
+        "Maven",
+        "Beans"
+      ],
       "type": "Part time",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.",
-      "companyId" : "1",
-      "suggestedToUserId": ["2", "4"],
-      "appliedUserId" : ["1", "2"],
-      "interviewUserId" : ["2"]
+      "companyId": "1",
+      "suggestedToUserId": [
+        "2",
+        "4"
+      ],
+      "appliedUserId": [
+        "1",
+        "2"
+      ],
+      "interviewUserId": [
+        "2"
+      ]
     }
   ],
-  "competencies" : [
+  "competencies": [
     {
       "id": "1",
       "value": "This is first competence",
-      "jobsId": ["1", "2"],
-      "usersId": ["1", "2"]
+      "jobsId": [
+        "1",
+        "2"
+      ],
+      "usersId": [
+        "1",
+        "2"
+      ]
     },
     {
       "id": "2",
       "value": "This is second competence",
-      "jobsId": ["1", "2"],
-      "usersId": ["1", "2"]
+      "jobsId": [
+        "1",
+        "2"
+      ],
+      "usersId": [
+        "1",
+        "2"
+      ]
     },
     {
       "id": "3",
       "value": "This is third competence",
-      "jobsId": ["1", "2"],
-      "usersId": ["1", "2"]
+      "jobsId": [
+        "1",
+        "2"
+      ],
+      "usersId": [
+        "1",
+        "2"
+      ]
     }
   ]
 }

@@ -26,6 +26,11 @@ export class JobsService implements OnInit{
     return this.http.get<Job>(this.BASE_URL + "jobs" + `/${id}`, this.getOptions());
   }
 
+  // Take Job object
+  updateSuggestionList(job: Job): Observable<Job>{
+    return this.http.put<Job>(this.BASE_URL + "jobs" + `/${job.id}`, job,this.getOptions());
+  }
+
   private getOptions() {
     return {
       headers: new HttpHeaders({

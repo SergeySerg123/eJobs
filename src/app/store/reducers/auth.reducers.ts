@@ -35,7 +35,8 @@ export function authReducers(state = initialState, action: AuthTypes): IState {
           token: action.payload.token,
           email: action.payload.email,
           name: action.payload.name,
-          role: action.payload.role
+          role: action.payload.role,
+          id: action.payload.userId
         },
         errorMessage: null
       };

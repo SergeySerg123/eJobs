@@ -7,12 +7,17 @@ import { User } from '../models/user.model';
 @Injectable()
 export class AuthService {
   private BASE_URL: string = 'http://localhost:1337';
-  private token: string = 'token';
+  public TOKEN: string = 'TOKEN';
+  public USER_ID_KEY = 'USER_ID_KEY';
 
   constructor(private http: HttpClient) {}
 
   getToken(): string {
-    return localStorage.getItem(this.token);
+    return localStorage.getItem(this.TOKEN);
+  }
+
+  getUserId(): string {
+    return localStorage.getItem(this.USER_ID_KEY);
   }
 
   logIn(email: string, password: string): Observable<User> {
@@ -26,6 +31,7 @@ export class AuthService {
   }
 
   logOut(): void {
-    localStorage.removeItem(this.token);
+    localStorage.removeItem(this.TOKEN);
+    localStorage.removeItem(this.USER_ID_KEY);
   }
 }

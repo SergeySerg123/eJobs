@@ -17,9 +17,11 @@ export class AuthServiceClient {
     this.store.dispatch(new LogIn());
     this.authService.logIn(payload.email, payload.password)
       .subscribe(res => {
-        localStorage.setItem('token', res.token);
+        localStorage.setItem(this.authService.TOKEN, res.token);
+        // !!! replace "1" on the res.id !!!!
+        localStorage.setItem(this.authService.USER_ID_KEY, "1");
         this.store.dispatch(new LogInSuccess(res));
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/').then();
       },
         err => { this.store.dispatch(new LogInFailure(err)) });
   }
@@ -29,7 +31,7 @@ export class AuthServiceClient {
     this.authService.signUp(payload.email, payload.name, payload.password)
       .subscribe(res => {
         this.store.dispatch(new SignUpSuccess(res));
-        this.router.navigateByUrl('/account/login');
+        this.router.navigateByUrl('/account/login').then();
       },
         err => { this.store.dispatch(new SignUpFailure(err))});
   }
@@ -42,5 +44,7 @@ export class AuthServiceClient {
     return this.authService.getToken();
   }
 
-
+  get userId(): string {
+    return this.authService.getUserId();
+  }
 }

@@ -4,14 +4,12 @@ import {Job} from "../../models/job.model";
 export interface IJobs {
   loading: boolean;
   jobsList: Job[] | null;
-  selectedJob: Job | null;
   error: boolean;
 }
 
 export const initialState: IJobs = {
   loading: false,
   jobsList: null,
-  selectedJob: null,
   error: false
 };
 
@@ -39,6 +37,19 @@ export function jobsReducers(state = initialState, action: JobsTypes): IJobs {
          loading: false,
          jobsList: null,
          error: true
+       };
+
+     case JobsActionsTypes.DELETE_SUGGESTED_JOB:
+       return {
+         ...state,
+         loading: true
+       };
+
+     case JobsActionsTypes.DELETE_SUGGESTED_JOB_SUCCEED:
+       return {
+         ...state,
+         loading: false,
+         jobsList: [...state.jobsList]
        };
 
     default:

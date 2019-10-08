@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Job} from "../../../models/job.model";
 import {Router} from "@angular/router";
 import {JobsClientService} from "../../../services/jobs-client.service";
+import {AuthServiceClient} from "../../../services/auth-client.service";
 
 @Component({
   selector: 'app-job-position',
@@ -16,14 +17,17 @@ export class JobPositionComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private jobsClient: JobsClientService
+    private jobsClient: JobsClientService,
+    private authClient: AuthServiceClient
   ) { }
 
   ngOnInit() {
   }
 
   async showFullInfo(id: string) {
-    await this.router.navigateByUrl(`/jobs/${id}`);
+    if (!this.hasCloseBtn) {
+      await this.router.navigateByUrl(`/jobs/${id}`);
+    }
   }
 
   // Didn't realise method
@@ -31,9 +35,17 @@ export class JobPositionComponent implements OnInit {
 
   }
 
-  // Didn't realise method
+  // Update suggestions list
   deleteSuggest(id: string) {
+    const job: Job = this.list.find(j => j.id === id);
+    let newSuggestedIdArr: string [];
+    newSuggestedIdArr = this.removeUserId([...job.suggestedToUserId],
+      this.authClient.userId);
+    job.suggestedToUserId = newSuggestedIdArr;
+    this.jobsClient.UpdateSuggestionList(job);
+  }
 
-    this.jobsClient
+  private removeUserId(array: string[], userId): string[] {
+    return array.filter(id => id !== userId);
   }
 }

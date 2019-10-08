@@ -3,7 +3,7 @@ import { AuthServiceClient } from '../../../services/auth-client.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../store/state/app.states';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { trigger, transition, style, animate, state,  AnimationBuilder, AnimationPlayer } from '@angular/animations';
+import { style, animate, AnimationBuilder, AnimationPlayer } from '@angular/animations';
 import { delay } from 'q';
 
 @Component({
@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
       await delay(400);
       this.isFirstRequest = !this.isFirstRequest;
     }
-      
+
 
     const payload = {
       email: this.registerForm.value.email,
@@ -129,9 +129,9 @@ export class LoginComponent implements OnInit {
 
   setFullScreen() {
     if (!this.isFullScreen) {
-      
+
       this.container.classList.add("fullScreen");
       delay(400).then(() => { this.host.nativeElement.querySelector(".form-window").classList.add("to-top");})
-    }    
+    }
   }
 }
