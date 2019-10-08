@@ -3,6 +3,7 @@ import {AuthServiceClient} from "./auth-client.service";
 import {Observable} from "rxjs";
 import {Job} from "../models/job.model";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {UpdateSuggestionListModel} from "../models/sender.models";
 
 @Injectable()
 export class JobsService implements OnInit{

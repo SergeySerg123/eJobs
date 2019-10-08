@@ -1,0 +1,7 @@
+<div class="sort-area mb-5 mt-3" (click)="setPage($event)">
+  <ul >
+    <li [class.active]="selectedRoute === vacancies" class="d-inline-block ml-3 mr-3" id="{{vacancies}}" >Suggestions</li>
+    <li [class.active]="selectedRoute === myApplications" class="d-inline-block ml-3 mr-3" id="{{myApplications}}">My applications</li>
+    <li [class.active]="selectedRoute === interviews" class="d-inline-block ml-3 mr-3" id="{{interviews}}">Interviews</li>
+  </ul>
+</div>

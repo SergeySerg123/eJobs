@@ -12,8 +12,10 @@ import {AuthServiceClient} from "../../../services/auth-client.service";
 export class JobPositionComponent implements OnInit {
 
   @Input() hasCloseBtn: boolean = false;
+  @Input() hasOpenBtn: boolean = false;
   @Input() list: Job[] = null;
   @Input() loading: boolean = false;
+
 
   constructor(
     private router: Router,
@@ -24,25 +26,34 @@ export class JobPositionComponent implements OnInit {
   ngOnInit() {
   }
 
+  // show info about selected Job element
   async showFullInfo(id: string) {
     if (!this.hasCloseBtn) {
       await this.router.navigateByUrl(`/jobs/${id}`);
     }
   }
 
-  // Didn't realise method
+  // delete Job from suggestion list and add to applications list
   applySuggest(id: string) {
-
+    const job: Job = this.deleteSuggestionIdFromList(id);
+    job.appliedUserId.push(this.authClient.userId);
+    this.jobsClient.UpdateSuggestionList(job);
   }
 
-  // Update suggestions list
+  // Delete position from suggestion list
   deleteSuggest(id: string) {
+    const job: Job = this.deleteSuggestionIdFromList(id);
+    this.jobsClient.UpdateSuggestionList(job);
+  }
+
+  // cut selected jobId from suggestedList
+  private deleteSuggestionIdFromList(id: string): Job {
     const job: Job = this.list.find(j => j.id === id);
     let newSuggestedIdArr: string [];
     newSuggestedIdArr = this.removeUserId([...job.suggestedToUserId],
       this.authClient.userId);
     job.suggestedToUserId = newSuggestedIdArr;
-    this.jobsClient.UpdateSuggestionList(job);
+    return job;
   }
 
   private removeUserId(array: string[], userId): string[] {

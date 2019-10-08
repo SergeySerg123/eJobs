@@ -9,9 +9,9 @@
     <div class="job-description text-justify">
       {{job.description}}
     </div>
-    <div class="d-flex justify-content-end mt-2" *ngIf="hasCloseBtn">
-      <button id="applyBtn" type="button" class="btn btn-primary mr-2" (click)="applySuggest(job.id)">Apply</button>
-      <button id="deleteBtn" type="button" class="btn btn-danger" (click)="deleteSuggest(job.id)">Delete</button>
+    <div class="d-flex justify-content-end mt-2" *ngIf="hasCloseBtn || hasOpenBtn">
+      <button *ngIf="hasOpenBtn" id="applyBtn" type="button" class="btn btn-primary mr-2" (click)="applySuggest(job.id)">Apply</button>
+      <button *ngIf="hasCloseBtn" id="deleteBtn" type="button" class="btn btn-danger" (click)="deleteSuggest(job.id)">Delete</button>
     </div>
   </div>
 </div>

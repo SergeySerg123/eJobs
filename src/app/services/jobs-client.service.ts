@@ -35,8 +35,11 @@ export class JobsClientService {
 
   UpdateSuggestionList(job: Job) {
     this.store.dispatch(new DeleteSuggestedJob());
-    this.jobs.updateSuggestionList(job).subscribe((updatedJob) => {
+    this.jobs.updateSuggestionList(job)
+      .subscribe((updatedJob) => {
       this.store.dispatch(new DeleteSuggestedJobSucceed(updatedJob));
-    }, error => {this.store.dispatch(new DeleteSuggestedJobFailure(error))});
+    }, error => {
+      this.store.dispatch(new DeleteSuggestedJobFailure(error));
+    });
   }
 }

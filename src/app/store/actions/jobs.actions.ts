@@ -63,6 +63,7 @@ export class DeleteSuggestedJobFailure implements Action {
   }
 }
 
+
 export type JobsTypes = GetAllJobs | GetAllJobsSuccess | GetAllJobsFailure
   | UpdateJob | UpdateJobSucceed | UpdateJobFailure
   | DeleteSuggestedJob | DeleteSuggestedJobSucceed | DeleteSuggestedJobFailure;

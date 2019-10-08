@@ -12,6 +12,9 @@ import { JobOppeningsComponent } from './job-oppenings/job-oppenings.component';
 import { FullJobPositionComponent } from './full-job-position/full-job-position.component';
 import {JobsClientService} from "../../services/jobs-client.service";
 import {JobsService} from "../../services/jobs.service";
+import { ApplicationsComponent } from './vacancies/applications/applications.component';
+import { NavbarVacanciesComponent } from './vacancies/navbar-vacancies/navbar-vacancies.component';
+import { SuggestionsComponent } from './vacancies/suggestions/suggestions.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import {JobsService} from "../../services/jobs.service";
     SidebarComponent,
     VacanciesComponent,
     JobOppeningsComponent,
-    FullJobPositionComponent
+    FullJobPositionComponent,
+    ApplicationsComponent,
+    NavbarVacanciesComponent,
+    SuggestionsComponent
   ],
   imports: [
     CommonModule,

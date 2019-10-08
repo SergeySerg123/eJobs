@@ -1,0 +1,3 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<app-job-position [hasCloseBtn]="true" [list]="vacancies"></app-job-position>
+<p class="text-center" *ngIf="vacancies.length === 0 && !loading" >No applied suggestions</p>

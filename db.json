@@ -15,11 +15,11 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut beatae consequatur enim excepturi inventore, ipsa magni mollitia quasi quo sit sunt tempora totam ullam unde vero? Adipisci aperiam delectus facere labore laboriosam, laudantium natus perspiciatis ratione sunt veniam? Aspernatur at eius facilis iste molestiae, molestias nesciunt nostrum nulla.",
       "companyId": "2",
       "suggestedToUserId": [
+        "1",
         "2",
         "4"
       ],
       "appliedUserId": [
-        "1",
         "2"
       ],
       "interviewUserId": [
@@ -45,7 +45,6 @@
         "4"
       ],
       "appliedUserId": [
-        "1",
         "2"
       ],
       "interviewUserId": [
@@ -71,8 +70,9 @@
         "4"
       ],
       "appliedUserId": [
-        "1",
-        "2"
+        "2",
+        "3",
+        "1"
       ],
       "interviewUserId": [
         "2"
