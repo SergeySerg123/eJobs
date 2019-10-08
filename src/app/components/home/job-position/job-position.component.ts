@@ -35,24 +35,27 @@ export class JobPositionComponent implements OnInit {
 
   // delete Job from suggestion list and add to applications list
   applySuggest(id: string) {
-    const job: Job = this.deleteSuggestionIdFromList(id);
+    const job: Job = this.deleteIdFromList(id);
     job.appliedUserId.push(this.authClient.userId);
     this.jobsClient.UpdateSuggestionList(job);
   }
 
   // Delete position from suggestion list
   deleteSuggest(id: string) {
-    const job: Job = this.deleteSuggestionIdFromList(id);
+    const job: Job = this.deleteIdFromList(id);
     this.jobsClient.UpdateSuggestionList(job);
   }
 
   // cut selected jobId from suggestedList
-  private deleteSuggestionIdFromList(id: string): Job {
+  private deleteIdFromList(id: string): Job {
     const job: Job = this.list.find(j => j.id === id);
-    let newSuggestedIdArr: string [];
-    newSuggestedIdArr = this.removeUserId([...job.suggestedToUserId],
-      this.authClient.userId);
-    job.suggestedToUserId = newSuggestedIdArr;
+    if (!this.hasOpenBtn) {
+      job.appliedUserId = this.removeUserId([...job.appliedUserId],
+        this.authClient.userId);
+    } else {
+      job.suggestedToUserId = this.removeUserId([...job.suggestedToUserId],
+        this.authClient.userId);
+    }
     return job;
   }
 

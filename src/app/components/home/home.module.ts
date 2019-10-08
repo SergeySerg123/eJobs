@@ -15,6 +15,7 @@ import {JobsService} from "../../services/jobs.service";
 import { ApplicationsComponent } from './vacancies/applications/applications.component';
 import { NavbarVacanciesComponent } from './vacancies/navbar-vacancies/navbar-vacancies.component';
 import { SuggestionsComponent } from './vacancies/suggestions/suggestions.component';
+import { CoursesComponent } from './courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SuggestionsComponent } from './vacancies/suggestions/suggestions.compon
     FullJobPositionComponent,
     ApplicationsComponent,
     NavbarVacanciesComponent,
-    SuggestionsComponent
+    SuggestionsComponent,
+    CoursesComponent
   ],
   imports: [
     CommonModule,
