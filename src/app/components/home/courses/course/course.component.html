@@ -1,0 +1,12 @@
+<div class="main-container">
+  <app-spinner *ngIf="loading"></app-spinner>
+  <div class="job-container" (click)="showFullInfo(course.id)" *ngFor="let course of list">
+    <div class="d-flex justify-content-between">
+      <div class="job-title">{{course.title}}</div>
+    </div>
+    <div class="salary">{{course.category}}</div>
+    <div class="job-description text-justify">
+      {{course.description}}
+    </div>
+  </div>
+</div>

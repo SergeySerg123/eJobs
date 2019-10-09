@@ -3,7 +3,7 @@
   <div class="job-container" (click)="showFullInfo(job.id)" *ngFor="let job of list" [class.job-container-hover]="!hasCloseBtn">
     <div class="d-flex justify-content-between">
       <div class="job-title">{{job.position}}</div>
-      <div class="matches">14 of 16 competences matched</div>
+      <div class="matches" >14 of 16 competences matched</div>
     </div>
     <div class="salary">{{job.type}}, <b>{{job.salary}}$</b> per months</div>
     <div class="job-description text-justify">

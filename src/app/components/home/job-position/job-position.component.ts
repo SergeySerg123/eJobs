@@ -16,7 +16,6 @@ export class JobPositionComponent implements OnInit {
   @Input() list: Job[] = null;
   @Input() loading: boolean = false;
 
-
   constructor(
     private router: Router,
     private jobsClient: JobsClientService,

@@ -1,0 +1,51 @@
+.main-container {
+}
+
+.job-container {
+  background: #FFFFFF;
+  border: 1px solid #E8EDF2;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 25px 30px;
+  width: 90%;
+  margin: 20px auto;
+
+  .job-title {
+    font-family: Proxima Nova;
+    font-weight: 700;
+    line-height: 29px;
+    color: #5E81F4;
+  }
+
+  .matches{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    color: #131336;
+  }
+
+  .salary {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 600;
+    margin: 10px 0;
+    color: #131336;
+
+    b{
+      font-weight: 800;
+    }
+  }
+
+  .job-description {
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #717171;
+  }
+}
+
+.job-container:hover{
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.2s;
+}

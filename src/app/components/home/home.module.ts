@@ -16,6 +16,9 @@ import { ApplicationsComponent } from './vacancies/applications/applications.com
 import { NavbarVacanciesComponent } from './vacancies/navbar-vacancies/navbar-vacancies.component';
 import { SuggestionsComponent } from './vacancies/suggestions/suggestions.component';
 import { CoursesComponent } from './courses/courses.component';
+import { CourseComponent } from './courses/course/course.component';
+import {CoursesClientService} from "../../services/courses-client.service";
+import {CoursesService} from "../../services/courses.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { CoursesComponent } from './courses/courses.component';
     ApplicationsComponent,
     NavbarVacanciesComponent,
     SuggestionsComponent,
-    CoursesComponent
+    CoursesComponent,
+    CourseComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +40,11 @@ import { CoursesComponent } from './courses/courses.component';
     FontAwesomeModule,
     RouterModule
   ],
-  providers: [JobsClientService, JobsService]
+  providers: [
+    JobsClientService,
+    JobsService,
+    CoursesClientService,
+    CoursesService
+  ]
 })
 export class HomeModule { }
