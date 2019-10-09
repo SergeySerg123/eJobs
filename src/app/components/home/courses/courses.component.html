@@ -10,3 +10,5 @@
 </div>
 
 <app-course [list]="coursesList" [loading]="loading"></app-course>
+<p class="text-center" *ngIf="coursesList.length === 0 && !loading" >No vacansies</p>
+
