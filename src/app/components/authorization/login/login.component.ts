@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     private animationBuilder: AnimationBuilder
   ) {
     this.store.subscribe(store => {
-      //Loading spinner emmiter
+      //Loading spinner emitter
       if (this.loading && !store.auth.loading) { this.loadingEmmiter() };
 
       this.loading = store.auth.loading;
@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
       password: this.registerForm.value.password,
     };
     this.loadingEmmiter();
-    delay(1000).then(() => { this.authServiceClient.LogIn(payload) });
+    await delay(1000).then(() => { this.authServiceClient.LogIn(payload) });
   }
 
   // Has errors after on submit

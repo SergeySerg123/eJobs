@@ -3,15 +3,16 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/ro
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/state/app.states';
 import { Injectable } from '@angular/core';
+import {AuthServiceClient} from "../services/auth-client.service";
 
 @Injectable()
 export class AuthGuard implements CanActivate {
   path: ActivatedRouteSnapshot[];
   route: ActivatedRouteSnapshot;
-  isAuthenticated: boolean
+  isAuthenticated: boolean;
 
   constructor(private store: Store<AppState>,
-    private router: Router) {
+    private router: Router, private authClient: AuthServiceClient) {
     this.store.subscribe(store => {
       this.isAuthenticated = store.auth.isAuthenticated;
     });
@@ -20,7 +21,9 @@ export class AuthGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.isAuthenticated) return true;
 
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('login').then( () => {
+
+    });
     return false;
   }
 }
