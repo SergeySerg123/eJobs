@@ -19,7 +19,6 @@ import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './courses/course/course.component';
 import {CoursesClientService} from "../../services/courses-client.service";
 import {CoursesService} from "../../services/courses.service";
-import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import { ProfileComponent } from './profile/profile.component';
     NavbarVacanciesComponent,
     SuggestionsComponent,
     CoursesComponent,
-    CourseComponent,
-    ProfileComponent
+    CourseComponent
   ],
   imports: [
     CommonModule,
