@@ -1,0 +1,73 @@
+<div class="job-container" >
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="d-flex justify-content-between">
+      <div class="job-title">New vacancy</div>
+    </div>
+    <hr>
+    <div class="form-group">
+      <label for="position">Position:</label>
+      <input formControlName="position" [ngClass]="{ 'is-invalid': submitted && f.position.errors,
+                 'is-valid': submitted && !f.position.errors}" type="text" class="form-control" id="position" placeholder="Java developer">
+      <div *ngIf="submitted && f.position.errors" class="invalid-feedback">
+        <div *ngIf="f.position.errors.required">Position is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City:</label>
+      <input formControlName="city"  [ngClass]="{ 'is-invalid': submitted && f.city.errors,
+                 'is-valid': submitted && !f.city.errors}" type="text" class="form-control" id="city" placeholder="Odessa">
+      <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+        <div *ngIf="f.city.errors.required">City is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <input formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors,
+                 'is-valid': submitted && !f.country.errors}" type="text" class="form-control" id="country" placeholder="Ukraine">
+
+      <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+        <div *ngIf="f.country.errors.required">Country is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="stack">Stack:</label>
+      <input formControlName="stack" [ngClass]="{ 'is-invalid': submitted && f.stack.errors,
+                 'is-valid': submitted && !f.stack.errors}" type="text" class="form-control" id="stack" placeholder="ASP.NET, C#, .NET">
+      <div *ngIf="submitted && f.stack.errors" class="invalid-feedback">
+        <div *ngIf="f.stack.errors.required">Stack is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type of employment:</label>
+      <select class="form-control" formControlName="type">
+        <option>Full time</option>
+        <option>Part time</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary per month ($):</label>
+      <input formControlName="salary" [ngClass]="{ 'is-invalid': submitted && f.salary.errors,
+                 'is-valid': submitted && !f.salary.errors}" type="text" class="form-control" id="salary" placeholder="1200">
+      <div *ngIf="submitted && f.salary.errors" class="invalid-feedback">
+        <div *ngIf="f.salary.errors.required">Salary is required</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">About new vacancy:</label>
+      <textarea formControlName="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors,
+                 'is-valid': submitted && !f.description.errors}" class="form-control" id="description"></textarea>
+      <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+        <div *ngIf="f.description.errors.required">Salary is required</div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+
+</div>

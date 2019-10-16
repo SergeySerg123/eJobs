@@ -31,6 +31,10 @@ export class JobsService implements OnInit{
     return this.http.put<Job>(this.BASE_URL + "jobs" + `/${job.id}`, job,this.getOptions());
   }
 
+  createJob(job: Job) {
+    return this.http.post<Job>(this.BASE_URL + 'jobs', job);
+  }
+
   private getOptions() {
     return {
       headers: new HttpHeaders({

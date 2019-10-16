@@ -1,7 +1,21 @@
-<div class="sort-area mb-5 mt-3" (click)="setPage($event)">
-  <ul >
+<div *ngIf="role === 'employeer'" class="sort-area mb-5 mt-3" (click)="setPage($event)">
+  <ul>
     <li [class.active]="selectedRoute === vacancies" class="d-inline-block ml-3 mr-3" id="{{vacancies}}" >Suggestions</li>
     <li [class.active]="selectedRoute === myApplications" class="d-inline-block ml-3 mr-3" id="{{myApplications}}">My applications</li>
     <li [class.active]="selectedRoute === interviews" class="d-inline-block ml-3 mr-3" id="{{interviews}}">Interviews</li>
   </ul>
 </div>
+
+<div *ngIf="role === 'employee'" (click)="setPage($event)" class="header-container d-flex justify-content-between">
+  <ul class="title" >
+    <li [class.active]="selectedRoute === myVacancies" class="d-inline-block ml-3 mr-3" id="{{myVacancies}}">My vacancies</li>
+    <li [class.active]="selectedRoute === vacancies" class="d-inline-block ml-3 mr-3" id="{{vacancies}}" >All vacancies</li>
+  </ul>
+  <div class="sort-params-container">
+    <span>Sorted by:</span>
+    <span class="selected item">Conformity</span>
+    <span class="item">Newest</span>
+  </div>
+</div>
+
+

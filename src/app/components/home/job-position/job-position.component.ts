@@ -15,6 +15,7 @@ export class JobPositionComponent implements OnInit {
   @Input() hasOpenBtn: boolean = false;
   @Input() list: Job[] = null;
   @Input() loading: boolean = false;
+  @Input() canCreate: boolean = false;
 
   constructor(
     private router: Router,
@@ -23,6 +24,11 @@ export class JobPositionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.canCreate = this.isEmployee;
+  }
+
+  get isEmployee(): boolean {
+    return this.authClient.role === 'employee';
   }
 
   // show info about selected Job element
@@ -43,6 +49,10 @@ export class JobPositionComponent implements OnInit {
   deleteSuggest(id: string) {
     const job: Job = this.deleteIdFromList(id);
     this.jobsClient.UpdateSuggestionList(job);
+  }
+
+  async navigateTo() {
+    await this.router.navigateByUrl('/new-vacancy');
   }
 
   // cut selected jobId from suggestedList

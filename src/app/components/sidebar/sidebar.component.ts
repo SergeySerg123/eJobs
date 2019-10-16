@@ -1,6 +1,7 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {faBriefcase, faCubes, faList, faUser} from '@fortawesome/free-solid-svg-icons';
+import {Component} from '@angular/core';
+import {faBriefcase, faCubes, faList, faUser, faUsers} from '@fortawesome/free-solid-svg-icons';
 import {Router} from "@angular/router";
+import {AuthServiceClient} from "../../services/auth-client.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -13,9 +14,13 @@ export class SidebarComponent {
   faUser = faUser;
   faBriefcase = faBriefcase;
   faCubes = faCubes;
+  faUsers = faUsers;
   currentUrl: string;
+  role: string;
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+  private authClient: AuthServiceClient,) {
+    this.role = this.authClient.role;
     this.nextActiveItem();
   }
 

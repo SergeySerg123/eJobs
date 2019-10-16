@@ -1,18 +1,31 @@
 ﻿export class Job {
   id?: string;
-  position?: string;
-  city?: string;
-  country?: string;
-  salary?: number;
-  stack?: string[];
-  type?: string;
-  description?: string;
-  companyId?: string;
+  position: string;
+  city: string;
+  country: string;
+  salary: number;
+  stack: string[];
+  type: string;
+  description: string;
+  companyId: string;
   suggestedToUserId?: string[];
   appliedUserId?: string[];
   interviewUserId?: string[];
 
-  constructor(id: string, position: string, city: string, country: string, salary: number, stack: string[], type: string, description: string, companyId: string, suggestedToUserId: string[], appliedUserId: string[], interviewUserId: string[]) {
+  constructor(
+    position:  string, 
+    city: string, 
+    country: string, 
+    salary: number, 
+    stack: string[], 
+    type: string, 
+    description: string, 
+    companyId: string, 
+    suggestedToUserId?: string[], 
+    appliedUserId?: string[], 
+    interviewUserId?: string[], 
+    id?: string, 
+    ) {
     this.id = id;
     this.position = position;
     this.city = city;
@@ -26,4 +39,5 @@
     this.appliedUserId = appliedUserId;
     this.interviewUserId = interviewUserId;
   }
+
 }

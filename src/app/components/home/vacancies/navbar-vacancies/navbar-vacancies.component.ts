@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthServiceClient} from "../../../../services/auth-client.service";
 
 @Component({
   selector: 'app-navbar-vacancies',
@@ -10,11 +11,16 @@ export class NavbarVacanciesComponent implements OnInit {
   vacancies: string = "vacancies";
   myApplications: string = "my-applications";
   interviews: string = "interviews";
+  myVacancies: string = "my-vacancies";
+  role: string;
   selectedRoute: string;
 
   constructor(
-    private router: Router
-  ) { }
+    private router: Router,
+    private authClient: AuthServiceClient
+  ) {
+    this.role = this.authClient.role;
+  }
 
   ngOnInit() {
     this.findActiveUrl();
@@ -49,6 +55,9 @@ export class NavbarVacanciesComponent implements OnInit {
 
       case this.interviews:
         return `${prefix + this.interviews}`;
+
+      case this.myVacancies:
+        return `${prefix + this.myVacancies}`;
     }
   }
 }

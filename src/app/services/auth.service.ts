@@ -9,6 +9,7 @@ export class AuthService {
   private BASE_URL: string = 'http://localhost:1337';
   public TOKEN: string = 'TOKEN';
   public USER_ID_KEY = 'USER_ID_KEY';
+  public COMPANY_ID_KEY = 'COMPANY_ID_KEY';
   public ROLE: string = 'ROLE';
 
   constructor(private http: HttpClient) {}
@@ -23,6 +24,10 @@ export class AuthService {
 
   getRole(): string {
     return localStorage.getItem(this.ROLE);
+  }
+
+  getCompanyId(): string {
+    return localStorage.getItem(this.COMPANY_ID_KEY);
   }
 
   logIn(email: string, password: string): Observable<User> {
@@ -40,4 +45,6 @@ export class AuthService {
     localStorage.removeItem(this.USER_ID_KEY);
     localStorage.removeItem(this.ROLE);
   }
+
+
 }

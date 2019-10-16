@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {UiModule} from "../UI/ui.module";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {RouterModule} from "@angular/router";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import { JobPositionComponent } from './job-position/job-position.component';
 import {HomeComponent} from "./home.component";
@@ -20,6 +21,11 @@ import { CourseComponent } from './courses/course/course.component';
 import {CoursesClientService} from "../../services/courses-client.service";
 import {CoursesService} from "../../services/courses.service";
 import {ProfileComponent} from "./profile/profile.component";
+import { NewVacancyComponent } from './new-vacancy/new-vacancy.component';
+import { ApplicantsListComponent } from './applicants-list/applicants-list.component';
+import { NavbarComponent } from './vacancies/applications/navbar/navbar.component';
+import { MySuggestionsComponent } from './vacancies/applications/my-suggestions/my-suggestions.component';
+import { InterviewsComponent } from './interviews/interviews.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +40,20 @@ import {ProfileComponent} from "./profile/profile.component";
     SuggestionsComponent,
     CoursesComponent,
     CourseComponent,
-    ProfileComponent
+    ProfileComponent,
+    NewVacancyComponent,
+    ApplicantsListComponent,
+    NavbarComponent,
+    MySuggestionsComponent,
+    InterviewsComponent
   ],
   imports: [
     CommonModule,
     UiModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     JobsClientService,

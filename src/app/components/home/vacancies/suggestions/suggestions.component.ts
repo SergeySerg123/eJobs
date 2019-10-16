@@ -3,6 +3,8 @@ import {Store} from "@ngrx/store";
 import {Job} from "../../../../models/job.model";
 import {AppState} from "../../../../store/state/app.states";
 import {JobsClientService} from "../../../../services/jobs-client.service";
+import {AuthServiceClient} from "../../../../services/auth-client.service";
+import {jobToArrayCreator} from "../../../../_helpers/job-to-array-creator";
 
 @Component({
   selector: 'app-suggestions',
@@ -13,24 +15,24 @@ export class SuggestionsComponent implements OnInit {
 
   vacancies: Job[] = [];
   loading: boolean = false;
-  testUserId = "1";
+  hasCloseBtn: boolean = true;
+  hasOpenBtn: boolean = true;
 
   constructor(
     private store: Store<AppState>,
-    private jobsClient: JobsClientService
+    private jobsClient: JobsClientService,
+    private authClient: AuthServiceClient
   ) {
     this.store.subscribe(state => {
-      let jobsList = state.jobsList.jobsList;
+      const jobsList = state.jobsList.jobsList;
       this.vacancies = [];
       this.loading = state.jobsList.loading;
-      if (jobsList !== null) {
-        jobsList.forEach(job => {
-          job.suggestedToUserId.forEach(userId => {
-            if (userId === this.testUserId) {
-              this.vacancies.push(job);
-            }
-          })
-        });
+      if (jobsList !== null && this.isEmployee(this.authClient.role)) {
+        this.hasCloseBtn = false;
+        this.hasOpenBtn = false;
+        this.vacancies = state.jobsList.jobsList;
+      } else if (jobsList !== null) {
+        this.vacancies = jobToArrayCreator(jobsList, this.authClient.userId);
       }
     });
   }
@@ -41,4 +43,7 @@ export class SuggestionsComponent implements OnInit {
     }
   }
 
+  private isEmployee(role: string): boolean {
+    return role === 'employee';
+  }
 }

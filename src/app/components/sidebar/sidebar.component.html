@@ -1,12 +1,27 @@
 <app-logo [w]="28" [h]="28" [textH]="22" [textW]="48" ></app-logo>
 
 <div class="sidebar-container">
-  <ul class="menu" (click)="nextActiveItem()">
+  <ul *ngIf="role === 'employeer'" class="menu" (click)="nextActiveItem()">
     <li [class.active]="currentUrl === ''" routerLink="/">
       <fa-icon [class.active-item]="currentUrl === ''" [icon]="faList"></fa-icon><span>Job oppenings</span>
     </li>
     <li [class.active]="currentUrl === 'vacancies'" routerLink="/vacancies">
       <fa-icon [class.active-item]="currentUrl === 'vacancies'" [icon]="faBriefcase"></fa-icon><span>My vacancies</span>
+    </li>
+    <li [class.active]="currentUrl === 'courses'" routerLink="/courses">
+      <fa-icon [class.active-item]="currentUrl === 'courses'" [icon]="faCubes"></fa-icon><span>Courses</span>
+    </li>
+    <li [class.active]="currentUrl === 'profile'" routerLink="/profile">
+      <fa-icon [class.active-item]="currentUrl === 'profile'" [icon]="faUser"></fa-icon><span>My profile</span>
+    </li>
+  </ul>
+
+  <ul *ngIf="role === 'employee'" class="menu" (click)="nextActiveItem()">
+    <li [class.active]="currentUrl === 'vacancies' || currentUrl === 'my-vacancies'" routerLink="/vacancies/my-vacancies">
+      <fa-icon [class.active-item]="currentUrl === 'vacancies' || currentUrl === 'my-vacancies'" [icon]="faBriefcase"></fa-icon><span>Vacancies</span>
+    </li>
+    <li [class.active]="currentUrl === 'applicants'" routerLink="/applicants">
+      <fa-icon [class.active-item]="currentUrl === 'applicants'" [icon]="faUsers"></fa-icon><span>Applicants</span>
     </li>
     <li [class.active]="currentUrl === 'courses'" routerLink="/courses">
       <fa-icon [class.active-item]="currentUrl === 'courses'" [icon]="faCubes"></fa-icon><span>Courses</span>

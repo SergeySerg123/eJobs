@@ -52,6 +52,26 @@ export function jobsReducers(state = initialState, action: JobsTypes): IJobs {
          jobsList: [...state.jobsList]
        };
 
+      case JobsActionsTypes.CREATE_NEW_JOB:
+       return {
+         ...state,
+         loading: true,
+         error: false
+       }
+
+      case JobsActionsTypes.DELETE_SUGGESTED_JOB_SUCCEED:
+        return {
+          ...state,
+          loading: false
+        }
+
+      case JobsActionsTypes.DELETE_SUGGESTED_JOB_FAILURE:
+          return {
+            ...state,
+            loading: false,
+            error: true
+          } 
+
     default:
       return state;
   }

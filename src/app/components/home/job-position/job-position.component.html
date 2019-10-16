@@ -14,5 +14,7 @@
       <button *ngIf="hasCloseBtn" id="deleteBtn" type="button" class="btn btn-danger" (click)="deleteSuggest(job.id)">Delete</button>
     </div>
   </div>
+
+  <a (click)="navigateTo()" *ngIf="!loading && canCreate" class="btn btn-primary text-white">New vacancy</a>
 </div>
 

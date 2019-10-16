@@ -1,3 +1,3 @@
 <app-spinner *ngIf="loading"></app-spinner>
-<app-job-position [hasCloseBtn]="true" [hasOpenBtn]="true" [list]="vacancies"></app-job-position>
+<app-job-position [hasCloseBtn]="hasCloseBtn" [hasOpenBtn]="hasOpenBtn" [list]="vacancies"></app-job-position>
 <p class="text-center" *ngIf="vacancies.length === 0 && !loading" >No vacansies</p>

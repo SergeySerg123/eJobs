@@ -9,7 +9,10 @@ export enum JobsActionsTypes {
   UPDATE_JOB_FAILURE = "[Jobs] UPDATE_JOB_FAILURE",
   DELETE_SUGGESTED_JOB = "[Jobs] DELETE_SUGGESTED_JOB",
   DELETE_SUGGESTED_JOB_SUCCEED = "[Jobs] DELETE_SUGGESTED_JOB_SUCCEED",
-  DELETE_SUGGESTED_JOB_FAILURE = "[Jobs] DELETE_SUGGESTED_JOB_FAILURE"
+  DELETE_SUGGESTED_JOB_FAILURE = "[Jobs] DELETE_SUGGESTED_JOB_FAILURE",
+  CREATE_NEW_JOB_SUCCEED = 'CREATE_NEW_JOB_SUCCEED',
+  CREATE_NEW_JOB_FAILURE = 'CREATE_NEW_JOB_FAILURE',
+  CREATE_NEW_JOB = 'CREATE_NEW_JOB'
 }
 
 export class GetAllJobs implements Action {
@@ -63,7 +66,19 @@ export class DeleteSuggestedJobFailure implements Action {
   }
 }
 
+export class CreateNewJob implements Action {
+  readonly type = JobsActionsTypes.CREATE_NEW_JOB;
+}
+
+export class CreateNewJobSucceed implements Action {
+  readonly type = JobsActionsTypes.CREATE_NEW_JOB_SUCCEED;
+}
+
+export class CreateNewJobFailure implements Action {
+  readonly type = JobsActionsTypes.CREATE_NEW_JOB_FAILURE;
+}
 
 export type JobsTypes = GetAllJobs | GetAllJobsSuccess | GetAllJobsFailure
   | UpdateJob | UpdateJobSucceed | UpdateJobFailure
-  | DeleteSuggestedJob | DeleteSuggestedJobSucceed | DeleteSuggestedJobFailure;
+  | DeleteSuggestedJob | DeleteSuggestedJobSucceed | DeleteSuggestedJobFailure
+  | CreateNewJob | CreateNewJobSucceed | CreateNewJobFailure;
