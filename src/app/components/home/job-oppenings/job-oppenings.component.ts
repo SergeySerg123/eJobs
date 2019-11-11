@@ -29,11 +29,16 @@ export class JobOppeningsComponent implements OnInit {
   ngOnInit() {
     this.jobsClient.GetAllJobs();
     this.store.subscribe(appState => {
-      // @ts-ignore
-      this.activatedRoute = this.router.url._value[0].path;
+      
+      try {
+        // @ts-ignore
+        this.activatedRoute = this.router.url._value[0].path;
+      } catch {
+        this.activatedRoute = '/';
+      }
       this.jobsList = appState.jobsList.jobsList;
       if (this.activatedRoute === 'my-vacancies' && this.jobsList !== null) {
-        this.jobsList = this.jobsList.filter(job => job.companyId === this.authClient.userId);
+        this.jobsList = this.jobsList.filter(job => job.companyId === this.authClient.companyId);
       }
       this.loading = appState.jobsList.loading;
     });

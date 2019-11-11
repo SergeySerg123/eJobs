@@ -5,6 +5,7 @@ import {AppState} from "../../../../store/state/app.states";
 import {JobsClientService} from "../../../../services/jobs-client.service";
 import {AuthServiceClient} from "../../../../services/auth-client.service";
 import {jobToArrayCreator} from "../../../../_helpers/job-to-array-creator";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-suggestions',
@@ -34,6 +35,8 @@ export class SuggestionsComponent implements OnInit {
       } else if (jobsList !== null) {
         this.vacancies = jobToArrayCreator(jobsList, this.authClient.userId);
       }
+      // distinct 
+      this.vacancies = _.uniqBy(this.vacancies, "id");
     });
   }
 

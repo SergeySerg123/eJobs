@@ -1,0 +1,26 @@
+<div class="job-container">
+     
+  <div class="d-flex justify-content-between">
+    <div class="matches mb-4">Competencies</div>
+  </div>
+
+  <div class="d-flex justify-content-between mb-3 competency-card" *ngFor="let competency of competencies">
+    <div class="title ml-0">{{competency.name}}:<span class="desc pl-2 pr-2">{{competency.value}}</span> 
+      
+    </div>
+    <div>
+      <span class="icon-card">
+        <fa-icon [icon]="faEye"></fa-icon>
+      </span>  
+      <span class="icon-card">
+        <fa-icon [icon]="faEdit"></fa-icon>
+      </span>  
+      <span class="icon-card">
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </span>  
+      <fa-icon class="ml-1 green-check" [class.red-check]="!competency.confirmed" [class.green-check]="competency.confirmed" [icon]="checkIfInvalid(competency.id)"></fa-icon>
+    </div>
+  </div>
+
+  <button type="button" (click)="addNewCompetency()" class="ml-4 btn btn-primary">Add new competency</button>
+</div>

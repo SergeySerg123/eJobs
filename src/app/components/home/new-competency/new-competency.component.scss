@@ -1,7 +1,7 @@
 .title {
   width: 90%;
   margin: 5px auto;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
 }
 
@@ -19,12 +19,6 @@ button {
   padding: 25px 30px;
   width: 90%;
   margin: 20px auto;
-  font-size: 16px;
-  font-weight: 600;
-
-  p {
-    color: #5E81F4;
-  }
 
   .job-title {
     font-family: Proxima Nova;
@@ -67,41 +61,8 @@ button {
   }
 }
 
-.upload-area {
-  width: 150px;
-  height: 200px;
-  background-color: #717171;
-  position: relative;
-
-  img {
-    width: 150px;
-    height: 200px;
-    position: absolute;
-  }
-}
-
-.add {
-  background: #F7F9FA;
-  border: 2px solid #E8EDF2;
-  box-sizing: border-box;
-}
-
-.inner-block {
+.job-container:hover{
   cursor: pointer;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content:center;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  color: #ABB4BE;
-
-
-  input{
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    cursor: pointer;
-  }
+  opacity: 0.8;
+  transition: all 0.2s;
 }

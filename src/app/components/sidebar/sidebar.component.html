@@ -14,6 +14,10 @@
     <li [class.active]="currentUrl === 'profile'" routerLink="/profile">
       <fa-icon [class.active-item]="currentUrl === 'profile'" [icon]="faUser"></fa-icon><span>My profile</span>
     </li>
+    <hr>
+    <li (click)="logOut()">
+      <fa-icon [icon]="faSignOutAlt"></fa-icon><span>Exit</span>
+    </li>
   </ul>
 
   <ul *ngIf="role === 'employee'" class="menu" (click)="nextActiveItem()">
@@ -28,6 +32,10 @@
     </li>
     <li [class.active]="currentUrl === 'profile'" routerLink="/profile">
       <fa-icon [class.active-item]="currentUrl === 'profile'" [icon]="faUser"></fa-icon><span>My profile</span>
+    </li>
+    <hr>
+    <li (click)="logOut()">
+      <fa-icon [icon]="faSignOutAlt"></fa-icon><span>Exit</span>
     </li>
   </ul>
 </div>

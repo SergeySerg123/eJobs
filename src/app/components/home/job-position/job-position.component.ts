@@ -38,10 +38,10 @@ export class JobPositionComponent implements OnInit {
     }
   }
 
-  // delete Job from suggestion list and add to applications list
+  // delete Job from suggestion list and add to interviews list
   applySuggest(id: string) {
     const job: Job = this.deleteIdFromList(id);
-    job.appliedUserId.push(this.authClient.userId);
+    job.interviewUserId.push(this.authClient.userId);
     this.jobsClient.UpdateSuggestionList(job);
   }
 
@@ -53,6 +53,10 @@ export class JobPositionComponent implements OnInit {
 
   async navigateTo() {
     await this.router.navigateByUrl('/new-vacancy');
+  }
+
+  get listNotNull(): boolean {
+    return this.list.length > 0;
   }
 
   // cut selected jobId from suggestedList

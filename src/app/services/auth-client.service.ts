@@ -2,8 +2,9 @@ import { Injectable } from "@angular/core";
 import { AuthService } from './auth.service';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/state/app.states';
-import { LogIn, LogInSuccess, LogInFailure, SignUp, SignUpFailure, SignUpSuccess } from '../store/actions/auth.actions';
+import { LogIn, LogInSuccess, LogInFailure, SignUp, SignUpFailure, SignUpSuccess, LogOut } from '../store/actions/auth.actions';
 import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 @Injectable()
 export class AuthServiceClient {
@@ -18,7 +19,8 @@ export class AuthServiceClient {
     this.authService.logIn(payload.email, payload.password)
       .subscribe(res => {
         localStorage.setItem(this.authService.TOKEN, res.token);
-        localStorage.setItem(this.authService.USER_ID_KEY, this.authService.USER_ID_KEY);
+        localStorage.setItem(this.authService.USER_ID_KEY, res.id);
+        localStorage.setItem(this.authService.ROLE, res.role);
         this.store.dispatch(new LogInSuccess(res));
         this.router.navigateByUrl('/').then();
       },
@@ -37,6 +39,8 @@ export class AuthServiceClient {
 
   LogOut(): void {
     this.authService.logOut();
+    this.store.dispatch(new LogOut());
+    this.router.navigateByUrl('/login');
   }
 
   get token(): string {

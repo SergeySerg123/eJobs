@@ -60,6 +60,11 @@ export class JobsClientService {
     });
   }
 
+  Apply(job: Job) {
+    job.appliedUserId.push(this.authClient.userId);
+    this.jobs.apply(job).subscribe(newJob => this.router.navigateByUrl('/'));
+  }
+
   // Factory method
   private createJobModel(payload: any): Job {
     let { position, city, country, salary, stack, description, type} = payload;

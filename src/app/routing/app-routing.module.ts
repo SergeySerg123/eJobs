@@ -9,8 +9,8 @@ import {homeRoutes} from "./children/home-child.routing";
 
 
 const routes: Routes = [
-  { path: '', canActivate: [AuthGuard], component: HomeComponent,
-  children: homeRoutes },
+  { path: '', canActivateChild: [AuthGuard], component: HomeComponent, 
+  children: homeRoutes},
   { path: 'login', component: LoginComponent, data: { state: 'login'} },
   { path: 'registration', component: RegistrationComponent, data: { state: 'registration' } },
   { path: '**', component: NotFoundPageComponent }

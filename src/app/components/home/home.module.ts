@@ -26,6 +26,11 @@ import { ApplicantsListComponent } from './applicants-list/applicants-list.compo
 import { NavbarComponent } from './vacancies/applications/navbar/navbar.component';
 import { MySuggestionsComponent } from './vacancies/applications/my-suggestions/my-suggestions.component';
 import { InterviewsComponent } from './interviews/interviews.component';
+import { CompetenciesAreaComponent } from './competencies-area/competencies-area.component';
+import { ProfileClientService } from 'src/app/services/profile-client.service';
+import { ProfileService } from 'src/app/services/profile.service';
+import { CompetenciesService } from 'src/app/services/competencies.service';
+import { NewCompetencyComponent } from './new-competency/new-competency.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +50,9 @@ import { InterviewsComponent } from './interviews/interviews.component';
     ApplicantsListComponent,
     NavbarComponent,
     MySuggestionsComponent,
-    InterviewsComponent
+    InterviewsComponent,
+    CompetenciesAreaComponent,
+    NewCompetencyComponent
   ],
   imports: [
     CommonModule,
@@ -59,7 +66,11 @@ import { InterviewsComponent } from './interviews/interviews.component';
     JobsClientService,
     JobsService,
     CoursesClientService,
-    CoursesService
+    CoursesService,
+    ProfileClientService,
+    ProfileService,
+    CompetenciesService,
+    {provide: Window, useValue: window}
   ]
 })
 export class HomeModule { }

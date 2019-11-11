@@ -16,7 +16,6 @@ export const initialState: IState = {
     loading: false
 };
 
-
 export function authReducers(state = initialState, action: AuthTypes): IState {
   switch (action.type) {
     case AuthActionTypes.LOGIN: {
@@ -34,9 +33,9 @@ export function authReducers(state = initialState, action: AuthTypes): IState {
         user: {
           token: action.payload.token,
           email: action.payload.email,
-          name: action.payload.name,
+          login: action.payload.name,
           role: action.payload.role,
-          userId: action.payload.userId
+          id: action.payload.userId
         },
         errorMessage: null
       };
@@ -70,6 +69,13 @@ export function authReducers(state = initialState, action: AuthTypes): IState {
         ...state,
         loading: false,
         errorMessage: 'Something went wrong.'
+      }
+    }
+
+    case AuthActionTypes.LOG_OUT: {
+      return {
+        ...state,
+        isAuthenticated: false
       }
     }
 

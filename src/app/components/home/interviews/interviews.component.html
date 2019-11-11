@@ -1,1 +1,5 @@
-<app-navbar></app-navbar>
+<app-spinner *ngIf="loading"></app-spinner>
+<app-job-position [list]="vacancies"></app-job-position>
+<p class="text-center" *ngIf="vacancies.length === 0 && !loading" >No interviews</p>
+
+

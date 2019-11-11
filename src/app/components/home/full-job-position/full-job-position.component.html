@@ -18,7 +18,7 @@
 
     <div class="d-flex justify-content-between mb-3">
       <div class="title">Salary:<span class="desc"> {{job.salary}}$ per month</span></div>
-      <div class="title">Stack:<span class="desc"> Java, Maven, Gradle</span></div>
+      <div class="title">Stack:<span class="desc"> {{job.stack}} </span></div>
       <div class="title">Type of employment:<span class="desc">{{job.type}}</span></div>
     </div>
 
@@ -53,6 +53,6 @@
 
 </div>
 <div class="title">
-  <button type="button" class="btn btn-primary">Send request</button>
+  <button type="button" (click)="apply()" class="btn btn-primary mb-4">Apply</button>
 </div>
 

@@ -5,6 +5,7 @@ import {AppState} from "../../../../store/state/app.states";
 import {JobsClientService} from "../../../../services/jobs-client.service";
 import {AuthServiceClient} from "../../../../services/auth-client.service";
 import {jobToArrayCreator} from "../../../../_helpers/job-to-array-creator";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-applications',
@@ -21,9 +22,14 @@ export class ApplicationsComponent implements OnInit {
     private authClient: AuthServiceClient
   ) {
     this.store.subscribe(state => {
+      const id = this.authClient.role === 'employee' ? this.authClient.companyId : this.authClient.userId;
       let jobsList = state.jobsList.jobsList;
       this.loading = state.jobsList.loading;
-      this.vacancies = jobToArrayCreator(jobsList, this.authClient.companyId);
+      if (jobsList !== undefined) {
+        const isSuggestions = false;
+        this.vacancies = jobToArrayCreator(jobsList, id, isSuggestions);
+      }   
+      this.vacancies = _.uniqBy(this.vacancies, "id");
     });
   }
 

@@ -33,4 +33,8 @@ export class FullJobPositionComponent implements OnInit{
       }
     })
   }
+
+  apply(): void {
+    this.jobsClient.Apply(this.job);
+  }
 }

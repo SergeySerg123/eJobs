@@ -15,6 +15,6 @@
     </div>
   </div>
 
-  <a (click)="navigateTo()" *ngIf="!loading && canCreate" class="btn btn-primary text-white">New vacancy</a>
+  <a (click)="navigateTo()" *ngIf="!loading && canCreate && listNotNull" class="btn btn-primary text-white">New vacancy</a>
 </div>
 

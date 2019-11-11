@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {faBriefcase, faCubes, faList, faUser, faUsers} from '@fortawesome/free-solid-svg-icons';
+import {faBriefcase, faCubes, faList, faUser, faUsers, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 import {Router} from "@angular/router";
 import {AuthServiceClient} from "../../services/auth-client.service";
 
@@ -15,6 +15,7 @@ export class SidebarComponent {
   faBriefcase = faBriefcase;
   faCubes = faCubes;
   faUsers = faUsers;
+  faSignOutAlt = faSignOutAlt;
   currentUrl: string;
   role: string;
 
@@ -26,5 +27,9 @@ export class SidebarComponent {
 
   nextActiveItem(): void {
     this.currentUrl = this.router.url.substr(1).split('/')[0];
+  }
+
+  logOut() {
+    this.authClient.LogOut();
   }
 }

@@ -9,15 +9,18 @@ import {ApplicationsComponent} from "../../components/home/vacancies/application
 import {NewVacancyComponent} from "../../components/home/new-vacancy/new-vacancy.component";
 import {MySuggestionsComponent} from "../../components/home/vacancies/applications/my-suggestions/my-suggestions.component";
 import {InterviewsComponent} from "../../components/home/interviews/interviews.component";
+import { AuthGuard } from 'src/app/guards/auth.guard';
+import { NewCompetencyComponent } from 'src/app/components/home/new-competency/new-competency.component';
 
 export const homeRoutes: Routes = [
   {path: "vacancies", component: VacanciesComponent, children: vacancyRoutes},
   {path: "new-vacancy", component: NewVacancyComponent},
+  {path: "add-new-competency", component: NewCompetencyComponent},
   {path: "courses", component: CoursesComponent},
   {path: "applicants", component: ApplicationsComponent},
   {path: "my-suggestions", component: MySuggestionsComponent},
   {path: "interviews", component: InterviewsComponent},
   {path: "profile", component: ProfileComponent},
   {path: 'jobs/:id', component: FullJobPositionComponent},
-  {path: '', component: JobOppeningsComponent}
+  {path: '', canActivate: [AuthGuard], component: JobOppeningsComponent}
 ];
